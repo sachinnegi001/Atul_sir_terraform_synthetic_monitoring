@@ -1,11 +1,11 @@
 resource "newrelic_synthetics_monitor" "monitor" {
-    for_each = var.ping
+  for_each         = var.ping
   status           = each.value.status
   name             = each.value.name
   period           = each.value.period
   uri              = each.value.uri
-  type             = each.value.type    #its type simple means it is pin monitoring
-  locations_public = [for i in each.value.locations_public:i]
+  type             = each.value.type 
+  locations_public = [for i in each.value.locations_public : i]
 
 
 
@@ -18,13 +18,13 @@ resource "newrelic_synthetics_monitor" "monitor" {
 }
 
 resource "newrelic_synthetics_monitor" "monitor2" {
-    for_each = var.browser
+  for_each         = var.browser
   status           = each.value.status
   name             = each.value.name
   period           = each.value.period
   uri              = each.value.uri
   type             = each.value.type
-  locations_public = [for i in each.value.locations_public:i]
+  locations_public = [for i in each.value.locations_public : i]
 
 
 
