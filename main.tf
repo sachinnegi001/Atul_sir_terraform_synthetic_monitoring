@@ -1,5 +1,5 @@
 module "name" {
-    source = "./module/monitor"
+    source = "./module"
     ping = var.ping
     browser = var.browser
 }
